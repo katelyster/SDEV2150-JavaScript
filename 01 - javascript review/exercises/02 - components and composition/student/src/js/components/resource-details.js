@@ -1,3 +1,5 @@
+const template = document.createElement("template"):
+template.innerHTML = `
 <section class="col-12 col-lg-4">
         <div class="card h-100">
           <div class="card-header">
@@ -29,3 +31,14 @@
           </div>
         </div>
       </section>
+      `
+
+  class ResourceResults extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open"})
+    this.shadowRoot(template.content.cloneNode(true))
+  }
+}
+
+customElements.define("resource-details", ResourceDetails);
