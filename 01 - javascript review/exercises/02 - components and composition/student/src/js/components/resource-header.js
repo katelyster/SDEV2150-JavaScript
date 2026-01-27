@@ -1,4 +1,4 @@
- const template = document.createElement("template"):
+ const template = document.createElement("template");
  template.innerHTML = `
  <header class="mb-4">
       <div class="d-flex flex-wrap justify-content-between align-items-end gap-2">
@@ -20,7 +20,7 @@
       }
  }
 
- costumElements.define('resource-header', ResourceHeader);
+ customElements.define('resource-header', ResourceHeader);
 
  // it is a better pattern to create and attach to the shadow root in the constructor, rather than the connectedCallback (ie. waiting until the component is loaded to the DOM)
 

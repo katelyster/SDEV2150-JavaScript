@@ -1,4 +1,4 @@
- const template = document.createElement("template"):
+ const template = document.createElement("template");
  template.innerHTML = `
 <aside class="col-12 col-lg-4">
         <div class="card">
