@@ -53,9 +53,12 @@ class ResourceFilters extends HTMLElement {
   }
 
   connectedCallback() {
+    // going to want all items selected by default
     this.render();
   }
 
+  // Handle:
+  // place/bind functions below as necessary 
   render() {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
