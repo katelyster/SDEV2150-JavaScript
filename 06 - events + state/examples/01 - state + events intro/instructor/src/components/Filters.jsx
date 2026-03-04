@@ -21,6 +21,23 @@ export default function Filters() {
     setVirtual(false)
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    // for now, we'll just log that our form was submitted
+    console.log('Filters submitted!')
+    // or if I'm being extra fancy (and anticipatory), pack the relevant state into an object
+    const filters = {
+      search: searchTerm,
+      categories: selectedCategories,
+      open: openNow,
+      online: virtual,
+    }
+    // and, optionally, reset a form after submission:
+    //    resetForm()
+    // in *this case*, because the filters affect what is being shown elsewhere on the UI,
+    // I'm going to leave them visible and leave it up to the user to click 'reset' to clear them.
+  }
+
   function toggleCategory(category) {
     // when I get a category, that means it's been clicked.
     // 1.   look in my stateful array to see if that category label is already there.
@@ -52,7 +69,11 @@ export default function Filters() {
   return (
     <Card title="Filters">
       <div className="space-y-4 p-4">
-        <form id="frm-filter" className="space-y-4">
+        <form
+          id="frm-filter"
+          className="space-y-4"
+          onSubmit={handleSubmit}
+        >
           <div className="space-y-1">
             <label htmlFor="q" className="block text-sm font-medium text-gray-700">
               Search
